@@ -26,6 +26,7 @@
   --text-md: 400 16px/140% var(--font-family);
   --text-sm: 400 14px/140% var(--font-family);
   --text-xs: 400 12px/140% var(--font-family);
+  font-family: "Oxygen", sans-serif;
   font-size: 16px;
 }
 
@@ -81,16 +82,37 @@ form {
 
 fieldset {
   border: none;
+  display: flex;
 }
 
-fieldset input {
+input {
   flex: 1;
   height: 2rem;
   border-radius: 0.5rem;
   border: none;
-  padding: 0rem;
+  padding: 1.5rem;
   font: var(--text-md);
   color: var(--gray-500);
   background-color: transparent;
+  align-items: center;
+
   outline: none;
+}
+
+button {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--gray-500);
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--gray-700);
+}
+
+button img {
+  height: 1.25rem;
+  width: 1.25rem;
 }
