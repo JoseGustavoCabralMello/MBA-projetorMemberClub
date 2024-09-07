@@ -8,7 +8,7 @@
   --pink: #D658B3;
   --grenn: #45B442;
   --gray-700: #332b31;
-  --gray-700a: hsla(315, 9%, 18%, 0.603);
+  --gray-700a: #322a309a;
   --gray-600: #4A4448;
   --gray-500: #756C71;
   --gray-400: #D3CFD2;
@@ -17,7 +17,7 @@
   --gray-100: #F4F1F2;
   --white: #FFFFFF;
 
-  --gradient-base: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%,#856CCF 66.67%,#D658B3 100%);
+  --gradient-base: linear-gradient(310deg,#2DAA6E 0%,#2DAAAA 33.33%, #856CCF 66.67%, #D658B3 100%);
 
   --font-family: "Oxygen", sans-serif;
   --title-md: 700 24px/140% var(--font-family);
@@ -146,22 +146,34 @@ section {
   /*
   display: flex;
   flex: 1;
-  */
-  /*gap: 1.25rem;
+  gap: 1.25rem;
   padding-bottom: 2rem;*/
 }
-
+  
 #user {
   display: flex;
-  background-color: var(--gray-100);
+  background: var(--gray-100);
   padding: 1rem;
   gap: 1rem;
 }
-
+  
 #avatar {
-  overflow: hidden;
-  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  
+  background: var(--gradient-base);
   border-radius: 10px;
   width: 56px;
   height: 56px;
+}
+
+#avatar img {
+  
+  /*
+  border: 2px solid black;
+  */
+  width: 52px;
+  height: 52px;
 }
