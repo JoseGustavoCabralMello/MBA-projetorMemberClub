@@ -141,20 +141,27 @@ main {
   */
 }
 
+/*
 section {
-  border: 2px solid;
-  /*
   display: flex;
   flex: 1;
   gap: 1.25rem;
-  padding-bottom: 2rem;*/
+  padding-bottom: 2rem;
 }
-  
+*/
+
 #user {
   display: flex;
-  background: var(--gray-100);
+  align-items: center;
+  
   padding: 1rem;
   gap: 1rem;
+  margin-bottom: 1rem;
+
+  border: 2px solid;
+  border-radius: 16px;
+  border-color: var(--gray-300);
+  background: var(--gray-100);
 }
   
 #avatar {
@@ -170,10 +177,47 @@ section {
 }
 
 #avatar img {
-  
-  /*
-  border: 2px solid black;
-  */
   width: 52px;
   height: 52px;
+}
+
+#user-info h1{
+  font: var(--title-sm);
+  color: var(--gray-600)
+}
+
+#user-info p {
+  font: var(--text-xs)
+}
+
+#history {
+  /*
+  display: flex;
+  flex-direction: column;
+  */
+
+  border: 2px solid;
+  border-radius: 16px;
+  border-color: var(--gray-300);
+  background: var(--gray-100);
+
+  padding: 1.75rem;
+
+}
+
+#history-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#history hr {
+  border-top: 2px solid var(--gray-300);
+  border-radius: 5px;
+}
+
+#haircuts {
+  list-style: none;
+
+  display: flex;
 }
