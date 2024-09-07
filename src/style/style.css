@@ -22,8 +22,8 @@
   --font-family: "Oxygen", sans-serif;
   --title-md: 700 24px/140% var(--font-family);
   --title-sm: 700 18px/140% var(--font-family);
-  --subtitle-md: 700 14px/140% var(--font-family);
-  --subtitle-sm: 700 12px/140% var(--font-family);
+  --subtitle-md: 700 14px/140% uppercase var(--font-family);
+  --subtitle-sm: 700 12px/140% uppercase var(--font-family);
   --text-md: 400 16px/140% var(--font-family);
   --text-sm: 400 14px/140% var(--font-family);
   --text-xs: 400 12px/140% var(--font-family);
@@ -209,6 +209,14 @@ section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+  font: var(--subtitle-sm);
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+#history-header p{
+  font: var(--text-xs);
+  color: var(--gray-500);
 }
 
 #history hr {
@@ -218,6 +226,26 @@ section {
 
 #haircuts {
   list-style: none;
+}
 
+#haircut {
   display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+
+#date {
+  display: flex;
+  flex-direction: column;
+}
+
+#date strong{ 
+  font: var(--subtitle-sm);
+  color: var(--gray-600);
+}
+
+#date span{ 
+  font: var(--text-xs);
+  color: var(--gray-500);
 }
