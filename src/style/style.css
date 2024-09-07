@@ -121,6 +121,26 @@ button img {
   width: 1.25rem;
 }
 
+main {
+  border: 2px solid green;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  
+  gap: 1.5rem;
+  
+  /*
+  grid-template-rows: calc(100vh - 1.5rem);
+  grid-template-areas: "form schedule";
+  
+  padding: 0.75rem;
+  
+  
+  display: flex;
+ 
+  flex: 1;
+  */
+}
+
 section {
   border: 2px solid;
   /*
@@ -129,4 +149,19 @@ section {
   */
   /*gap: 1.25rem;
   padding-bottom: 2rem;*/
+}
+
+#user {
+  display: flex;
+  background-color: var(--gray-100);
+  padding: 1rem;
+  gap: 1rem;
+}
+
+#avatar {
+  overflow: hidden;
+  border: 2px solid red;
+  border-radius: 10px;
+  width: 56px;
+  height: 56px;
 }
