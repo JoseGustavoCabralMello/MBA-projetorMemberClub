@@ -7,7 +7,8 @@
 :root {
   --pink: #D658B3;
   --grenn: #45B442;
-  --gray-700: #332B31;
+  --gray-700: #332b31;
+  --gray-700a: hsla(315, 9%, 18%, 0.603);
   --gray-600: #4A4448;
   --gray-500: #756C71;
   --gray-400: #D3CFD2;
@@ -16,7 +17,7 @@
   --gray-100: #F4F1F2;
   --white: #FFFFFF;
 
-  --gradient-base: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%,#856CCF 66.67%,#D658B3 100%)
+  --gradient-base: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%,#856CCF 66.67%,#D658B3 100%);
 
   --font-family: "Oxygen", sans-serif;
   --title-md: 700 24px/140% var(--font-family);
@@ -51,56 +52,55 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  color: var(--gray-500);
-  font-family: "Oxygen", sans-serif;
+ 
+  color: var(--gray-700a);
+  font: var(--text-md);
   font-size: 16px;
-  /*
-  */
 }
 
 header {
-  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4rem;
 }
 
 .logo {
-  border: 1px solid;
   width: 7.25rem;
   height: 3.5rem;
   margin-top: 4rem;
   margin-bottom: 2rem;
 }
 
-
-
 form {
   background-color: var(--gray-300);
   border: 2px solid var(--gray-400);
-  border-radius: 1rem;
-  /*padding: 0.5rem;*/
-  max-width: 400px;
-  
+  border-radius: 12px;
+
+  width: 400px;
+  height: 56px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
 }
 
-fieldset {
-  border: none;
-  display: flex;
+form:focus-within {
+  border: 2px solid var(--pink);
 }
 
 input {
-  flex: 1;
-  height: 2rem;
-  border-radius: 0.5rem;
   border: none;
-  padding: 1.5rem;
+  width: 324px;
+  padding-left: 0.5rem;
   font: var(--text-md);
   color: var(--gray-500);
   background-color: transparent;
-  align-items: center;
-  
   outline: none;
+}
+
+input:focus-within {
+  caret-color: var(--pink);
 }
 
 button {
@@ -109,7 +109,7 @@ button {
   background-color: var(--gray-500);
   height: 2.5rem;
   width: 2.5rem;
-  margin-right: 0.5rem;
+  /*margin-right: 0.5rem;*/
 }
 
 button:hover {
