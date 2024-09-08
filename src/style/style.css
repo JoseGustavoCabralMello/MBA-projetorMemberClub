@@ -122,6 +122,9 @@ button img {
 }
 
 main {
+  width: 90%;
+  max-width: 1280px;
+  
   border: 2px solid green;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -210,7 +213,7 @@ section {
   justify-content: space-between;
   margin-bottom: 1rem;
   font: var(--subtitle-sm);
-  text-transform: uppercase;
+  
   color: var(--gray-500);
 }
 
@@ -240,12 +243,12 @@ section {
   flex-direction: column;
 }
 
-#date strong{ 
+#date #day { 
   font: var(--subtitle-sm);
   color: var(--gray-600);
 }
 
-#date span{ 
+#date #hour { 
   font: var(--text-xs);
   color: var(--gray-500);
 }
