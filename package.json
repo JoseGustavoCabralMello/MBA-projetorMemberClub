@@ -1,6 +1,6 @@
 {
-  "name": "hairday",
-  "description": "Aplicação Web de agendamento para corte de cabelo",
+  "name": "member-club",
+  "description": "Aplicação de fidelidade para corte de cabelo",
   "author": "Gustavo Mello",
   "scripts": {
     "build": "webpack",
