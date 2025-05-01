@@ -1,0 +1,40 @@
+
+#user {
+  display: flex;
+  align-items: center;
+  
+  padding: 1rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  border: 2px solid;
+  border-radius: 16px;
+  border-color: var(--gray-300);
+  background: var(--gray-100);
+}
+  
+#avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  
+  background: var(--gradient-base);
+  border-radius: 10px;
+  width: 56px;
+  height: 56px;
+}
+
+#avatar img {
+  width: 52px;
+  height: 52px;
+}
+
+#user-info h1{
+  font: var(--title-sm);
+  color: var(--gray-600)
+}
+
+#user-info p {
+  font: var(--text-xs)
+}

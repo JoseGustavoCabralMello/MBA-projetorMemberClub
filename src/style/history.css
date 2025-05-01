@@ -1,0 +1,59 @@
+#history {
+  /*
+  display: flex;
+  flex-direction: column;
+  */
+
+  border: 2px solid;
+  border-radius: 16px;
+  border-color: var(--gray-300);
+  background: var(--gray-100);
+
+  padding: 1.75rem;
+
+}
+
+#history-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font: var(--subtitle-sm);
+  
+  color: var(--gray-500);
+}
+
+#history-header p{
+  font: var(--text-xs);
+  color: var(--gray-500);
+}
+
+#history hr {
+  border-top: 2px solid var(--gray-300);
+  border-radius: 5px;
+}
+
+#haircuts {
+  list-style: none;
+}
+
+#haircut {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+
+#date {
+  display: flex;
+  flex-direction: column;
+}
+
+#date #day { 
+  font: var(--subtitle-sm);
+  color: var(--gray-600);
+}
+
+#date #hour { 
+  font: var(--text-xs);
+  color: var(--gray-500);
+}
