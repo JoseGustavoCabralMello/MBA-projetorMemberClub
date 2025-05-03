@@ -26,22 +26,24 @@
 }
 
 #user-id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   width: 185px;
   background: var(--gray-300);
   border-radius: 25px;
   padding: 0.5rem;
-  
 }
 
-#seals {  
+#seals {
   display: grid;
-  grid-template: auto / auto auto auto auto auto;
-  align-items: center;
+  grid-template-areas: 
+  "a b c d e"
+  "f g h j i";
   justify-content: space-around;
-  gap: 1rem;
-  
+  padding-top: 1rem;
 }
-
 
 .seal {
   padding: 0.5rem;
@@ -50,8 +52,7 @@
   margin-bottom: 1rem;
   
   display: flex;
-  
-  
+    
   width: 5.5rem;
   height: 5.5rem;
 }
@@ -59,58 +60,72 @@
 .seal:last-child {
   padding: 1.3rem;
   }
+
+@media (max-width: 940px) {
+  .seal {
+    width: 3.5rem;
+    height: 3.5rem; 
+  }
+
+  .seal:last-child {
+    padding: 0.6rem;
+    }
+
+  #user-id {
+   font-size: 14px; 
+  }
+}
   
-  #progress {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid;
-    border-radius: 16px;
-    border-color: var(--gray-300);
-    background: var(--gray-100);
-    padding: 2rem;
-    margin-top: 1rem;
-  }
+#progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid;
+  border-radius: 16px;
+  border-color: var(--gray-300);
+  background: var(--gray-100);
+  padding: 2rem;
+  margin-top: 1rem;
+}
 
-  #progress-info div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+#progress-info div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-  #progress-info div {
-    align-items: first baseline;
-  }
-  
-  #progress-info div span {
-    font: var(--title-md);
-    color: var(--gray-600);
-  }
+#progress-info div {
+  align-items: first baseline;
+}
 
-  #info-cuts {
-    font: var(--text-md);
-    color: var(--gray-500);
-  }
-  
-  #progress-info  {
-    font: var(--text-xs);
-    color:var(--gray-500);
-  }
+#progress-info div span {
+  font: var(--title-md);
+  color: var(--gray-600);
+}
 
-  #bar {
-    height: 10px;
-    width: 280px;
-    background-color: var(--gray-300);
-    background: var(--gradient-base);
+#info-cuts {
+  font: var(--text-md);
+  color: var(--gray-500);
+}
 
-    border-radius: 25px;
-  }
+#progress-info  {
+  font: var(--text-xs);
+  color:var(--gray-500);
+}
 
-  #progress img {
-    height: 4.5rem;
-    width: 4.5rem;
-    border-radius: 100px;
-    background: var(--gray-200);
-  }
+#bar {
+  height: 10px;
+  width: 280px;
+  background-color: var(--gray-300);
+  background: var(--gradient-base);
 
-  
+  border-radius: 25px;
+}
+
+#progress img {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 100px;
+  background: var(--gray-200);
+}
+
