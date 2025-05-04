@@ -26,3 +26,17 @@ form.onsubmit = async (event) => {
     return(clientId)
   }
 }
+
+  // const h1 = document.createElement("h1")
+  //       const p = document.createElement("p")
+  //       //div.setAttribute("id", "user-info")
+
+  //       console.log(id)
+  //       console.log(name)
+  //       console.log(clientSince)
+  //       h1.textContent = name
+  //       p.textContent = clientSince
+
+  //       userInfo.innerHTML = ""
+  //       userInfo.append(h1)
+  //       userInfo.append(p)
