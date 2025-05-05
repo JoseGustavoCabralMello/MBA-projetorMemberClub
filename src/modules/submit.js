@@ -59,35 +59,28 @@ function updateHistory(client) {
   historyP.append(userhistoryP)
 
   const appointments = client[0].appointmentHistory
-  console.log(appointments)
-
   appointments.forEach(appointment => {
-    console.log(appointment)
 
-  
+    const cutItem = document.createElement("li")
+    cutItem.setAttribute("id", "haircut")
 
-  const cutItem = document.createElement("li")
-  cutItem.setAttribute("id", "haircut")
+    const cutDate = document.createElement("div")
+    cutDate.setAttribute("id", "date")
 
-  const cutDate = document.createElement("div")
-  cutDate.setAttribute("id", "date")
+    const cutDay = document.createElement("span")
+    cutDay.setAttribute("id", "day")
+    cutDay.textContent = appointment.date
 
-  const cutDay = document.createElement("span")
-  cutDay.setAttribute("id", "day")
-  cutDay.textContent = appointment.date
+    const cutHour = document.createElement("span")
+    cutHour.setAttribute("id", "hour")
+    cutHour.textContent = appointment.time
 
-  const cutHour = document.createElement("span")
-  cutHour.setAttribute("id", "hour")
-  cutHour.textContent = appointment.time
+    const pinCheckIcon = document.createElement("img")
+    pinCheckIcon.setAttribute("src", "./src/assets/assets/IconN.svg")
+    pinCheckIcon.setAttribute("alt", "Marcação de corte")
 
-  const pinCheckIcon = document.createElement("img")
-  pinCheckIcon.setAttribute("src", "./src/assets/assets/IconN.svg")
-  pinCheckIcon.setAttribute("alt", "Marcação de corte")
-
-  cutDate.append(cutDay, cutHour)
-  cutItem.append(cutDate, pinCheckIcon)
-  cutsList.append(cutItem)
-});
-
-  console.log(client[0].appointmentHistory[0].date)
+    cutDate.append(cutDay, cutHour)
+    cutItem.append(cutDate, pinCheckIcon)
+    cutsList.append(cutItem)
+  });
 }
