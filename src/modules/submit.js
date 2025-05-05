@@ -2,7 +2,8 @@ import { apiConfig } from "../services/api-config.js"
 
 const form = document.querySelector("form")
 const input = document.querySelector("input")
-const userInfo = document.getElementById("user-info")
+const user = document.getElementById("user-info")
+const avatar = document.getElementById("avatar")
 
 form.onsubmit = async (event) => {
   
@@ -15,28 +16,49 @@ form.onsubmit = async (event) => {
   // console.log(clients)
 
   const client = clients.filter(client => (client.id === idInput))
-  // console.log(client)
+  console.log(client)
   
   if (client.length === 0) {
     alert("Insira um ID válido!")
   } else {
-    const clientId = client[0].id
+    const clientId = client[0].name
     console.log(clientId)
     
+    updateUser(client)
     return(clientId)
   }
 }
 
-  // const h1 = document.createElement("h1")
-  //       const p = document.createElement("p")
-  //       //div.setAttribute("id", "user-info")
+async function updateUser (client) {
+  user.innerHTML = ""
+  avatar.innerHTML = ""
 
-  //       console.log(id)
-  //       console.log(name)
-  //       console.log(clientSince)
-  //       h1.textContent = name
-  //       p.textContent = clientSince
+  console.log(client[0].appointmentHistory.length)
 
-  //       userInfo.innerHTML = ""
-  //       userInfo.append(h1)
-  //       userInfo.append(p)
+  const avatarUser = document.createElement("div")
+  avatarUser.setAttribute("id", "avatar")
+
+  const avatarImg = document.createElement("img")
+
+  // const path = `./src/assets/${client[0].id}.png`
+  // console.log(path)
+
+  avatarImg.setAttribute("src", `./src/assets/${client[0].id}.png`)
+  console.log(avatarImg)
+
+  avatarImg.setAttribute("alt", "avatar")
+  avatar.append(avatarImg)
+
+  const userInfo = document.createElement("div")
+  userInfo.setAttribute("id", "user-info")
+  
+  const userInfoH1 = document.createElement("h1")
+  userInfoH1.textContent = client[0].name
+  console.log(userInfoH1)
+
+  const userInfoP = document.createElement("p")
+  userInfoP.textContent = "Cliente desde " + client[0].clientSince
+  console.log(userInfoP)
+  
+  user.append(userInfoH1, userInfoP)
+}

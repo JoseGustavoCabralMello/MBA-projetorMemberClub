@@ -26,6 +26,7 @@
 }
 
 #avatar img {
+  border-radius: 8px;
   width: 52px;
   height: 52px;
 }
