@@ -5,6 +5,7 @@ const input = document.querySelector("input")
 const user = document.getElementById("user-info")
 const avatar = document.getElementById("avatar")
 const historyP = document.getElementById("history-p")
+const cutsList = document.getElementById("haircuts")
 
 form.onsubmit = async (event) => {
   
@@ -49,6 +50,7 @@ function updateUser (client) {
 
 function updateHistory(client) {
   historyP.innerHTML = ""
+  cutsList.innerHTML = ""
 
   const userhistoryP= document.createElement("p")
   userhistoryP.setAttribute("id", "history-p")
@@ -56,5 +58,36 @@ function updateHistory(client) {
 
   historyP.append(userhistoryP)
 
-  console.log(client[0].appointmentHistory.length)
+  const appointments = client[0].appointmentHistory
+  console.log(appointments)
+
+  appointments.forEach(appointment => {
+    console.log(appointment)
+
+  
+
+  const cutItem = document.createElement("li")
+  cutItem.setAttribute("id", "haircut")
+
+  const cutDate = document.createElement("div")
+  cutDate.setAttribute("id", "date")
+
+  const cutDay = document.createElement("span")
+  cutDay.setAttribute("id", "day")
+  cutDay.textContent = appointment.date
+
+  const cutHour = document.createElement("span")
+  cutHour.setAttribute("id", "hour")
+  cutHour.textContent = appointment.time
+
+  const pinCheckIcon = document.createElement("img")
+  pinCheckIcon.setAttribute("src", "./src/assets/assets/IconN.svg")
+  pinCheckIcon.setAttribute("alt", "Marcação de corte")
+
+  cutDate.append(cutDay, cutHour)
+  cutItem.append(cutDate, pinCheckIcon)
+  cutsList.append(cutItem)
+});
+
+  console.log(client[0].appointmentHistory[0].date)
 }
