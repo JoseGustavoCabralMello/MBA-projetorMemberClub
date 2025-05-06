@@ -8,7 +8,7 @@ const historyP = document.getElementById("history-p")
 const cutsList = document.getElementById("haircuts")
 const id = document.getElementById("user-id")
 const seals = document.getElementById("seals")
-const sealo = document.getElementById("seal")
+// const sealo = document.getElementById("seal")
 
 form.onsubmit = async (event) => {
   
@@ -91,7 +91,7 @@ function updateHistory(client) {
 
   function updateCard(client) {
     id.innerHTML = ""
-    // seals.innerHTML = ""
+    seals.innerHTML = ""
     
 
     const userId = document.createElement("span")
@@ -102,27 +102,40 @@ function updateHistory(client) {
 
     const sealCount = client[0].appointmentHistory.length
     
-    // for(var j = 0; j < 10; j++) {
-    //   const seal = document.createElement("div")
-    //   seal.setAttribute("class", "seal")
-    //   seals.append(seal)
-    // }
-    
-    for(var i = 0; i < sealCount; i++) {
-      // seals.innerHTML = ""
+    var i = 0
+    for(var j = 0; j < 10; j++) {
+      if(sealCount>(i)){
+        const seal = document.createElement("div")
+        seal.setAttribute("class", "seal")
+        
+        const sealIcon = document.createElement("img")
+        sealIcon.setAttribute("src", "./src/assets/PinCheck.png")
+        sealIcon.setAttribute("alt", "Selo fidelidade")
+        
+        seal.append(sealIcon)
+        seals.append(seal)
+        i += 1
+        console.log(i)
+      }else if(i==9){
+        const seal = document.createElement("div")
+        seal.setAttribute("class", "seal")
+        
+        const sealIcon = document.createElement("img")
+        sealIcon.setAttribute("src", "./src/assets/assets/PinGiftGrayN.svg")
+        sealIcon.setAttribute("alt", "Selo fidelidade")
+        
+        seal.append(sealIcon)
+        seals.append(seal)
+      } else {
 
-      const seal = document.createElement("div")
-      seal.setAttribute("class", "seal")
+        const seal = document.createElement("div")
+        seal.setAttribute("class", "seal")
+        seals.append(seal)
+      }
       
-      const sealIcon = document.createElement("img")
-      sealIcon.setAttribute("src", "./src/assets/PinCheck.png")
-      sealIcon.setAttribute("alt", "Selo fidelidade")
-      
-      seal.append(sealIcon)
-      sealo.append(seal)
-      // seals.append(seal)
-    }
     
+    
+  }
 
 }
 
