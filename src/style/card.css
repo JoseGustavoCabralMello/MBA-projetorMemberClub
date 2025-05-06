@@ -33,7 +33,6 @@
   width: 185px;
   background: var(--gray-300);
   border-radius: 25px;
-  padding: 0.5rem;
 }
 
 #seals {
@@ -57,9 +56,9 @@
   height: 5.5rem;
 }
 
-.seal:last-child {
+/* .seal:last-child {
   padding: 1.3rem;
-  }
+  } */
 
 @media (max-width: 940px) {
   .seal {

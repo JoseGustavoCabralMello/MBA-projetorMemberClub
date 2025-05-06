@@ -6,6 +6,9 @@ const user = document.getElementById("user-info")
 const avatar = document.getElementById("avatar")
 const historyP = document.getElementById("history-p")
 const cutsList = document.getElementById("haircuts")
+const id = document.getElementById("user-id")
+const seals = document.getElementById("seals")
+const sealo = document.getElementById("seal")
 
 form.onsubmit = async (event) => {
   
@@ -21,6 +24,7 @@ form.onsubmit = async (event) => {
   } else {
     updateUser(client)
     updateHistory(client)
+    updateCard(client)
   }
 }
 
@@ -84,3 +88,41 @@ function updateHistory(client) {
     cutsList.append(cutItem)
   });
 }
+
+  function updateCard(client) {
+    id.innerHTML = ""
+    // seals.innerHTML = ""
+    
+
+    const userId = document.createElement("span")
+    userId.setAttribute("id", "user-id")
+    userId.textContent = `ID: ${client[0].id}`
+  
+    id.append(userId)
+
+    const sealCount = client[0].appointmentHistory.length
+    
+    // for(var j = 0; j < 10; j++) {
+    //   const seal = document.createElement("div")
+    //   seal.setAttribute("class", "seal")
+    //   seals.append(seal)
+    // }
+    
+    for(var i = 0; i < sealCount; i++) {
+      // seals.innerHTML = ""
+
+      const seal = document.createElement("div")
+      seal.setAttribute("class", "seal")
+      
+      const sealIcon = document.createElement("img")
+      sealIcon.setAttribute("src", "./src/assets/PinCheck.png")
+      sealIcon.setAttribute("alt", "Selo fidelidade")
+      
+      seal.append(sealIcon)
+      sealo.append(seal)
+      // seals.append(seal)
+    }
+    
+
+}
+
