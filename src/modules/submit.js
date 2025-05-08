@@ -8,7 +8,8 @@ const historyP = document.getElementById("history-p")
 const cutsList = document.getElementById("haircuts")
 const id = document.getElementById("user-id")
 const seals = document.getElementById("seals")
-// const sealo = document.getElementById("seal")
+const progress = document.getElementById("progress-bar")
+const bar = document.getElementById("bar")
 
 form.onsubmit = async (event) => {
   
@@ -25,6 +26,7 @@ form.onsubmit = async (event) => {
     updateUser(client)
     updateHistory(client)
     updateCard(client)
+    barProgress(client)
   }
 }
 
@@ -89,47 +91,49 @@ function updateHistory(client) {
   });
 }
 
-  function updateCard(client) {
-    id.innerHTML = ""
-    seals.innerHTML = ""
-    
-
-    const userId = document.createElement("span")
-    userId.setAttribute("id", "user-id")
-    userId.textContent = `ID: ${client[0].id}`
+function updateCard(client) {
+  id.innerHTML = ""
+  seals.innerHTML = ""
   
-    id.append(userId)
 
-    const sealCount = client[0].appointmentHistory.length
-    
-    var i = 1
-    for(var j = 0; j < 10; j++) {
-      if(sealCount >= i ){
+  const userId = document.createElement("span")
+  userId.setAttribute("id", "user-id")
+  userId.textContent = `ID: ${client[0].id}`
+
+  id.append(userId)
+
+  const sealCount = client[0].appointmentHistory.length
+  
+  var i = 1
+  for(var j = 0; j < 10; j++) {
+    if(sealCount >= i ){
+      const seal = document.createElement("div")
+      seal.setAttribute("class", "seal")
+      
+      const sealIcon = document.createElement("img")
+      sealIcon.setAttribute("src", "./src/assets/PinCheck.png")
+
+      if(i===10){
+        sealIcon.setAttribute("src", "./src/assets/PinGiftGray.svg")
+      }
+
+      sealIcon.setAttribute("alt", "Selo fidelidade")
+      
+      seal.append(sealIcon)
+      seals.append(seal)
+      i += 1
+      
+    } else {
         const seal = document.createElement("div")
         seal.setAttribute("class", "seal")
-        
-        const sealIcon = document.createElement("img")
-        sealIcon.setAttribute("src", "./src/assets/PinCheck.png")
-
-        if(i===10){
-          sealIcon.setAttribute("src", "./src/assets/PinGiftGray.svg")
-        }
-        
-        sealIcon.setAttribute("alt", "Selo fidelidade")
-        
-        seal.append(sealIcon)
         seals.append(seal)
-        i += 1
-        
-      } else {
-          const seal = document.createElement("div")
-          seal.setAttribute("class", "seal")
-          seals.append(seal)
-      }
-      
-    
-    
+    }    
   }
+}
 
+function barProgress(client) {
+  const sealCount = client[0].appointmentHistory.length
+  progress.setAttribute("style", "width: " + (sealCount * 10)+"%")
+  console.log(sealCount)
 }
 
