@@ -89,8 +89,7 @@
 
 #progress-info div {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  gap: 0.3rem;
 }
 
 #progress-info div {
@@ -103,20 +102,27 @@
 }
 
 #info-cuts {
+  border: 2px solid blue;
   font: var(--text-md);
   color: var(--gray-500);
 }
 
 #progress-info  {
+  width:85%;
   font: var(--text-xs);
   color:var(--gray-500);
+  border: 2px solid red;
+}
+
+#teste {
+  border: 2px solid green;
+  display:flex;
 }
 
 #bar {
   height: 10px;
   width: 100%px;
   border-radius: 25px;
-  border: 2px solid red;
   background-color: var(--gray-300);
   display: flex;
   align-items: center;
@@ -124,11 +130,10 @@
 }
 
 #progress-bar {
-  border: 2px solid blue;
   height:100%;
   border-radius: 25px;
   background: var(--gradient-base);
-
+  
 }
 
 #progress img {
