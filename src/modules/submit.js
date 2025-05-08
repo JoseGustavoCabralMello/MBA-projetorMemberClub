@@ -102,35 +102,29 @@ function updateHistory(client) {
 
     const sealCount = client[0].appointmentHistory.length
     
-    var i = 0
+    var i = 1
     for(var j = 0; j < 10; j++) {
-      if(sealCount>(i)){
+      if(sealCount >= i ){
         const seal = document.createElement("div")
         seal.setAttribute("class", "seal")
         
         const sealIcon = document.createElement("img")
         sealIcon.setAttribute("src", "./src/assets/PinCheck.png")
+
+        if(i===10){
+          sealIcon.setAttribute("src", "./src/assets/PinGiftGray.svg")
+        }
+        
         sealIcon.setAttribute("alt", "Selo fidelidade")
         
         seal.append(sealIcon)
         seals.append(seal)
         i += 1
-        console.log(i)
-      }else if(i==9){
-        const seal = document.createElement("div")
-        seal.setAttribute("class", "seal")
         
-        const sealIcon = document.createElement("img")
-        sealIcon.setAttribute("src", "./src/assets/assets/PinGiftGrayN.svg")
-        sealIcon.setAttribute("alt", "Selo fidelidade")
-        
-        seal.append(sealIcon)
-        seals.append(seal)
       } else {
-
-        const seal = document.createElement("div")
-        seal.setAttribute("class", "seal")
-        seals.append(seal)
+          const seal = document.createElement("div")
+          seal.setAttribute("class", "seal")
+          seals.append(seal)
       }
       
     
