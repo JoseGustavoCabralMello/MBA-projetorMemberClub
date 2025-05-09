@@ -10,6 +10,7 @@ const id = document.getElementById("user-id")
 const seals = document.getElementById("seals")
 const progress = document.getElementById("progress-bar")
 const bar = document.getElementById("bar")
+const teste = document.getElementById("teste")
 
 form.onsubmit = async (event) => {
   
@@ -132,8 +133,14 @@ function updateCard(client) {
 }
 
 function barProgress(client) {
+  
   const sealCount = client[0].appointmentHistory.length
   progress.setAttribute("style", "width: " + (sealCount * 10)+"%")
   console.log(sealCount)
+  
+  bar.append(progress)
+  teste.append(bar)
+  console.log(bar)
+  console.log(teste)
 }
 
