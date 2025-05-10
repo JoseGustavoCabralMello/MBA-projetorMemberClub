@@ -12,6 +12,8 @@ border-color: var(--gray-300);
 background: var(--gray-100);
 
 padding: 1.75rem;
+
+
 }
 
 #history-header {
@@ -34,14 +36,13 @@ padding: 1.75rem;
 }
 
 #list {
-  border: 2px solid red;
+  height: 100%;
+  overflow: scroll;
 }
 
 #haircuts {
-  border: 2px solid blue;
+  margin-right: 0.5rem;
   list-style: none;
-  overflow: scroll;
-
 }
 
 #haircut {
