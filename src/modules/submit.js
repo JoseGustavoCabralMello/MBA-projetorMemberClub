@@ -9,8 +9,10 @@ const cutsList = document.getElementById("haircuts")
 const id = document.getElementById("user-id")
 const seals = document.getElementById("seals")
 const progress = document.getElementById("progress-bar")
-const bar = document.getElementById("bar")
-const teste = document.getElementById("teste")
+// const bar = document.getElementById("bar")
+// const teste = document.getElementById("teste")
+// const infoCuts = document.getElementById("info-cuts")
+
 
 form.onsubmit = async (event) => {
   
@@ -133,13 +135,19 @@ function updateCard(client) {
 }
 
 function barProgress(client) {
+
+  const teste = document.createElement("div")
+  teste.setAttribute("id", "teste")
+  
+  const bar = document.createElement("div")
+  teste.setAttribute("id", "bar")
   
   const sealCount = client[0].appointmentHistory.length
   progress.setAttribute("style", "width: " + (sealCount * 10)+"%")
   console.log(sealCount)
   
-  bar.append(progress)
-  teste.append(bar)
+  // bar.append(progress)
+  // teste.append(bar)
   console.log(bar)
   console.log(teste)
 }
