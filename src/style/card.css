@@ -112,15 +112,18 @@
   background-color: var(--gray-300);
   display: flex;
   align-items: center;
-  
 }
 
 #progress-bar {
   height:100%;
   border-radius: 25px;
   background: var(--gradient-base);
-  
 }
+
+/* #text-bar {
+  border: 2px solid orange;
+
+} */
 
 #progress img {
   height: 4.5rem;
